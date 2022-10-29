@@ -86,7 +86,7 @@ namespace LibraryHub
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Movies}/{action=Index}/{id?}");
+                    pattern: "{controller=Main}/{action=Index}/{id?}");
             });
 
             //Seed database
