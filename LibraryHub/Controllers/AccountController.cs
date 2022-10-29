@@ -49,7 +49,7 @@ namespace LibraryHub.Controllers
                     var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
                     if (result.Succeeded)
                     {
-                        return RedirectToAction("Index", "Movies");
+                        return RedirectToAction("Index", "Home");
                     }
                 }
                 TempData["Error"] = "Wrong credentials. Please, try again!";
@@ -93,7 +93,7 @@ namespace LibraryHub.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Movies");
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult AccessDenied(string ReturnUrl)
