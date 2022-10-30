@@ -32,16 +32,16 @@ namespace LibraryHub.Data.Cart
             return new ShoppingCart(context) { ShoppingCartId = cartId };
         }
 
-        public void AddItemToCart(Movie movie)
+        public void AddItemToCart(Book book)
         {
-            var shoppingCartItem = _context.ShoppingCartItems.FirstOrDefault(n => n.Movie.Id == movie.Id && n.ShoppingCartId == ShoppingCartId);
+            var shoppingCartItem = _context.ShoppingCartItems.FirstOrDefault(n => n.Book.Id == book.Id && n.ShoppingCartId == ShoppingCartId);
 
             if(shoppingCartItem == null)
             {
                 shoppingCartItem = new ShoppingCartItem()
                 {
                     ShoppingCartId = ShoppingCartId,
-                    Movie = movie,
+                    Book = book,
                     Amount = 1
                 };
 
@@ -53,9 +53,9 @@ namespace LibraryHub.Data.Cart
             _context.SaveChanges();
         }
 
-        public void RemoveItemFromCart(Movie movie)
+        public void RemoveItemFromCart(Book book)
         {
-            var shoppingCartItem = _context.ShoppingCartItems.FirstOrDefault(n => n.Movie.Id == movie.Id && n.ShoppingCartId == ShoppingCartId);
+            var shoppingCartItem = _context.ShoppingCartItems.FirstOrDefault(n => n.Book.Id == book.Id && n.ShoppingCartId == ShoppingCartId);
 
             if (shoppingCartItem != null)
             {
@@ -72,10 +72,10 @@ namespace LibraryHub.Data.Cart
 
         public List<ShoppingCartItem> GetShoppingCartItems()
         {
-            return ShoppingCartItems ?? (ShoppingCartItems = _context.ShoppingCartItems.Where(n => n.ShoppingCartId == ShoppingCartId).Include(n => n.Movie).ToList());
+            return ShoppingCartItems ?? (ShoppingCartItems = _context.ShoppingCartItems.Where(n => n.ShoppingCartId == ShoppingCartId).Include(n => n.Book).ToList());
         }
 
-        public double GetShoppingCartTotal() =>  _context.ShoppingCartItems.Where(n => n.ShoppingCartId == ShoppingCartId).Select(n => n.Movie.Price * n.Amount).Sum();
+        public double GetShoppingCartTotal() =>  _context.ShoppingCartItems.Where(n => n.ShoppingCartId == ShoppingCartId).Select(n => n.Book.Price * n.Amount).Sum();
 
         public async Task ClearShoppingCartAsync()
         {

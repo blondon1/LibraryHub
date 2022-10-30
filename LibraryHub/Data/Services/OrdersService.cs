@@ -17,7 +17,7 @@ namespace LibraryHub.Data.Services
 
         public async Task<List<Order>> GetOrdersByUserIdAndRoleAsync(string userId, string userRole)
         {
-            var orders = await _context.Orders.Include(n => n.OrderItems).ThenInclude(n => n.Movie).Include(n => n.User).ToListAsync();
+            var orders = await _context.Orders.Include(n => n.OrderItems).ThenInclude(n => n.Book).Include(n => n.User).ToListAsync();
 
             if(userRole != "Admin")
             {
@@ -42,9 +42,9 @@ namespace LibraryHub.Data.Services
                 var orderItem = new OrderItem()
                 {
                     Amount = item.Amount,
-                    MovieId = item.Movie.Id,
+                    MovieId = item.Book.Id,
                     OrderId = order.Id,
-                    Price = item.Movie.Price
+                    Price = item.Book.Price
                 };
                 await _context.OrderItems.AddAsync(orderItem);
             }

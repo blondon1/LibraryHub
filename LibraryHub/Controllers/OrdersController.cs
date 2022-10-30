@@ -15,11 +15,11 @@ namespace LibraryHub.Controllers
     [Authorize] 
     public class OrdersController : Controller
     {
-        private readonly IMoviesService _moviesService;
+        private readonly IBooksService _moviesService;
         private readonly ShoppingCart _shoppingCart;
         private readonly IOrdersService _ordersService;
 
-        public OrdersController(IMoviesService moviesService, ShoppingCart shoppingCart, IOrdersService ordersService)
+        public OrdersController(IBooksService moviesService, ShoppingCart shoppingCart, IOrdersService ordersService)
         {
             _moviesService = moviesService;
             _shoppingCart = shoppingCart;

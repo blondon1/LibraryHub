@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryHub.Models
 {
-    public class Actor:IEntityBase
+    public class Author:IEntityBase
     {
         [Key]
         public int Id { get; set; }
@@ -26,6 +26,6 @@ namespace LibraryHub.Models
         public string Bio { get; set; }
 
         //Relationships
-        public List<Actor_Movie> Actors_Movies { get; set; }
+        public List<Author_Book> Authors_Books { get; set; }
     }
 }

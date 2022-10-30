@@ -12,11 +12,11 @@ using System.Threading.Tasks;
 namespace LibraryHub.Controllers
 {
     [Authorize(Roles = UserRoles.Admin)]
-    public class ActorsController : Controller
+    public class AuthorsController : Controller
     {
-        private readonly IActorsService _service;
+        private readonly IAuthorsService _service;
 
-        public ActorsController(IActorsService service)
+        public AuthorsController(IAuthorsService service)
         {
             _service = service;
         }
@@ -35,13 +35,13 @@ namespace LibraryHub.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("FullName,ProfilePictureURL,Bio")]Actor actor)
+        public async Task<IActionResult> Create([Bind("FullName,ProfilePictureURL,Bio")] Author author)
         {
             if (!ModelState.IsValid)
             {
-                return View(actor);
+                return View(author);
             }
-            await _service.AddAsync(actor);
+            await _service.AddAsync(author);
             return RedirectToAction(nameof(Index));
         }
 
@@ -64,13 +64,13 @@ namespace LibraryHub.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,ProfilePictureURL,Bio")] Actor actor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,ProfilePictureURL,Bio")] Author author)
         {
             if (!ModelState.IsValid)
             {
-                return View(actor);
+                return View(author);
             }
-            await _service.UpdateAsync(id, actor);
+            await _service.UpdateAsync(id, author);
             return RedirectToAction(nameof(Index));
         }
 

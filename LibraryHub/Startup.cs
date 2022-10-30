@@ -36,10 +36,10 @@ namespace LibraryHub
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
 
             //Services configuration
-            services.AddScoped<IActorsService, ActorsService>();
+            services.AddScoped<IAuthorsService, AuthorsService>();
             services.AddScoped<IProducersService, ProducersService>();
             services.AddScoped<ICinemasService, CinemasService>();
-            services.AddScoped<IMoviesService, MoviesService>();
+            services.AddScoped<IBooksService, BooksService>();
             services.AddScoped<IOrdersService, OrdersService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

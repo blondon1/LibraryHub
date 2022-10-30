@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace LibraryHub.Data.Services
 {
-    public interface IMoviesService:IEntityBaseRepository<Movie>
+    public interface IBooksService:IEntityBaseRepository<Book>
     {
-        Task<Movie> GetMovieByIdAsync(int id);
+        Task<Book> GetMovieByIdAsync(int id);
         Task<NewMovieDropdownsVM> GetNewMovieDropdownsValues();
         Task AddNewMovieAsync(NewMovieVM data);
         Task UpdateMovieAsync(NewMovieVM data);

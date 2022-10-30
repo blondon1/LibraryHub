@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace LibraryHub.Data
 {
@@ -59,36 +60,36 @@ namespace LibraryHub.Data
                     context.SaveChanges();
                 }
                 //Actors
-                if (!context.Actors.Any())
+                if (!context.Authors.Any())
                 {
-                    context.Actors.AddRange(new List<Actor>()
+                    context.Authors.AddRange(new List<Author>()
                     {
-                        new Actor()
+                        new Author()
                         {
                             FullName = "Actor 1",
                             Bio = "This is the Bio of the first actor",
                             ProfilePictureURL = "http://dotnethow.net/images/actors/actor-1.jpeg"
 
                         },
-                        new Actor()
+                        new Author()
                         {
                             FullName = "Actor 2",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/actors/actor-2.jpeg"
                         },
-                        new Actor()
+                        new Author()
                         {
                             FullName = "Actor 3",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/actors/actor-3.jpeg"
                         },
-                        new Actor()
+                        new Author()
                         {
                             FullName = "Actor 4",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/actors/actor-4.jpeg"
                         },
-                        new Actor()
+                        new Author()
                         {
                             FullName = "Actor 5",
                             Bio = "This is the Bio of the second actor",
@@ -137,11 +138,11 @@ namespace LibraryHub.Data
                     context.SaveChanges();
                 }
                 //Movies
-                if (!context.Movies.Any())
+                if (!context.Books.Any())
                 {
-                    context.Movies.AddRange(new List<Movie>()
+                    context.Books.AddRange(new List<Book>()
                     {
-                        new Movie()
+                        new Book()
                         {
                             Name = "Life",
                             Description = "This is the Life movie description",
@@ -153,7 +154,7 @@ namespace LibraryHub.Data
                             ProducerId = 3,
                             MovieCategory = MovieCategory.Documentary
                         },
-                        new Movie()
+                        new Book()
                         {
                             Name = "The Shawshank Redemption",
                             Description = "This is the Shawshank Redemption description",
@@ -165,7 +166,7 @@ namespace LibraryHub.Data
                             ProducerId = 1,
                             MovieCategory = MovieCategory.Action
                         },
-                        new Movie()
+                        new Book()
                         {
                             Name = "Ghost",
                             Description = "This is the Ghost movie description",
@@ -177,7 +178,7 @@ namespace LibraryHub.Data
                             ProducerId = 4,
                             MovieCategory = MovieCategory.Horror
                         },
-                        new Movie()
+                        new Book()
                         {
                             Name = "Race",
                             Description = "This is the Race movie description",
@@ -189,7 +190,7 @@ namespace LibraryHub.Data
                             ProducerId = 2,
                             MovieCategory = MovieCategory.Documentary
                         },
-                        new Movie()
+                        new Book()
                         {
                             Name = "Scoob",
                             Description = "This is the Scoob movie description",
@@ -201,7 +202,7 @@ namespace LibraryHub.Data
                             ProducerId = 3,
                             MovieCategory = MovieCategory.Cartoon
                         },
-                        new Movie()
+                        new Book()
                         {
                             Name = "Cold Soles",
                             Description = "This is the Cold Soles movie description",
@@ -217,102 +218,102 @@ namespace LibraryHub.Data
                     context.SaveChanges();
                 }
                 //Actors & Movies
-                if (!context.Actors_Movies.Any())
+                if (!context.Authors_Books.Any())
                 {
-                    context.Actors_Movies.AddRange(new List<Actor_Movie>()
+                    context.Authors_Books.AddRange(new List<Author_Book>()
                     {
-                        new Actor_Movie()
+                        new Author_Book()
                         {
-                            ActorId = 1,
-                            MovieId = 1
+                            AuthorId = 1,
+                            BookId = 1
                         },
-                        new Actor_Movie()
+                        new Author_Book()
                         {
-                            ActorId = 3,
-                            MovieId = 1
-                        },
-
-                         new Actor_Movie()
-                        {
-                            ActorId = 1,
-                            MovieId = 2
-                        },
-                         new Actor_Movie()
-                        {
-                            ActorId = 4,
-                            MovieId = 2
+                            AuthorId = 3,
+                            BookId = 1
                         },
 
-                        new Actor_Movie()
+                         new Author_Book()
                         {
-                            ActorId = 1,
-                            MovieId = 3
+                            AuthorId = 1,
+                            BookId = 2
                         },
-                        new Actor_Movie()
+                         new Author_Book()
                         {
-                            ActorId = 2,
-                            MovieId = 3
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = 5,
-                            MovieId = 3
+                            AuthorId = 4,
+                            BookId = 2
                         },
 
-
-                        new Actor_Movie()
+                        new Author_Book()
                         {
-                            ActorId = 2,
-                            MovieId = 4
+                            AuthorId = 1,
+                            BookId = 3
                         },
-                        new Actor_Movie()
+                        new Author_Book()
                         {
-                            ActorId = 3,
-                            MovieId = 4
+                            AuthorId = 2,
+                            BookId = 3
                         },
-                        new Actor_Movie()
+                        new Author_Book()
                         {
-                            ActorId = 4,
-                            MovieId = 4
+                            AuthorId = 5,
+                            BookId = 3
                         },
 
 
-                        new Actor_Movie()
+                        new Author_Book()
                         {
-                            ActorId = 2,
-                            MovieId = 5
+                            AuthorId = 2,
+                            BookId = 4
                         },
-                        new Actor_Movie()
+                        new Author_Book()
                         {
-                            ActorId = 3,
-                            MovieId = 5
+                            AuthorId = 3,
+                            BookId = 4
                         },
-                        new Actor_Movie()
+                        new Author_Book()
                         {
-                            ActorId = 4,
-                            MovieId = 5
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = 5,
-                            MovieId = 5
+                            AuthorId = 4,
+                            BookId = 4
                         },
 
 
-                        new Actor_Movie()
+                        new Author_Book()
                         {
-                            ActorId = 3,
-                            MovieId = 6
+                            AuthorId = 2,
+                            BookId = 5
                         },
-                        new Actor_Movie()
+                        new Author_Book()
                         {
-                            ActorId = 4,
-                            MovieId = 6
+                            AuthorId = 3,
+                            BookId = 5
                         },
-                        new Actor_Movie()
+                        new Author_Book()
                         {
-                            ActorId = 5,
-                            MovieId = 6
+                            AuthorId = 4,
+                            BookId = 5
+                        },
+                        new Author_Book()
+                        {
+                            AuthorId = 5,
+                            BookId = 5
+                        },
+
+
+                        new Author_Book()
+                        {
+                            AuthorId = 3,
+                            BookId = 6
+                        },
+                        new Author_Book()
+                        {
+                            AuthorId = 4,
+                            BookId = 6
+                        },
+                        new Author_Book()
+                        {
+                            AuthorId = 5,
+                            BookId = 6
                         },
                     });
                     context.SaveChanges();

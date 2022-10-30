@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LibraryHub.Models
 {
-    public class Movie:IEntityBase
+    public class Book:IEntityBase
     {
         [Key]
         public int Id { get; set; }
@@ -23,7 +23,7 @@ namespace LibraryHub.Models
         public MovieCategory MovieCategory { get; set; }
 
         //Relationships
-        public List<Actor_Movie> Actors_Movies { get; set; }
+        public List<Author_Book> Authors_Books { get; set; }
 
         //Cinema
         public int CinemaId { get; set; }

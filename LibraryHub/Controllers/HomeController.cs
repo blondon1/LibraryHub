@@ -16,9 +16,9 @@ namespace LibraryHub.Controllers
     [Authorize(Roles = UserRoles.Admin)]
     public class HomeController : Controller
     {
-        private readonly IMoviesService _service;
+        private readonly IBooksService _service;
 
-        public HomeController(IMoviesService service)
+        public HomeController(IBooksService service)
         {
             _service = service;
         }
@@ -62,7 +62,7 @@ namespace LibraryHub.Controllers
 
             ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
             ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
-            ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
+            ViewBag.Actors = new SelectList(movieDropdownsData.Author, "Id", "FullName");
 
             return View();
         }
@@ -76,7 +76,7 @@ namespace LibraryHub.Controllers
 
                 ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
                 ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
-                ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
+                ViewBag.Actors = new SelectList(movieDropdownsData.Author, "Id", "FullName");
 
                 return View(movie);
             }
@@ -104,13 +104,13 @@ namespace LibraryHub.Controllers
                 MovieCategory = movieDetails.MovieCategory,
                 CinemaId = movieDetails.CinemaId,
                 ProducerId = movieDetails.ProducerId,
-                ActorIds = movieDetails.Actors_Movies.Select(n => n.ActorId).ToList(),
+                AuthorIds = movieDetails.Authors_Books.Select(n => n.AuthorId).ToList(),
             };
 
             var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
             ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
             ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
-            ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
+            ViewBag.Actors = new SelectList(movieDropdownsData.Author, "Id", "FullName");
 
             return View(response);
         }
@@ -126,7 +126,7 @@ namespace LibraryHub.Controllers
 
                 ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
                 ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
-                ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
+                ViewBag.Actors = new SelectList(movieDropdownsData.Author, "Id", "FullName");
 
                 return View(movie);
             }

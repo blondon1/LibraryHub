@@ -12,11 +12,11 @@ namespace LibraryHub.Data.ViewModels
         {
             Producers = new List<Producer>();
             Cinemas = new List<Cinema>();
-            Actors = new List<Actor>();
+            Author = new List<Author>();
         }
 
         public List<Producer> Producers { get; set; }
         public List<Cinema> Cinemas { get; set; }
-        public List<Actor> Actors { get; set; }
+        public List<Author> Author { get; set; }
     }
 }

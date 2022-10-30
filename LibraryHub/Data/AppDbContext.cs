@@ -16,22 +16,22 @@ namespace LibraryHub.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Actor_Movie>().HasKey(am => new
+            modelBuilder.Entity<Author_Book>().HasKey(am => new
             {
-                am.ActorId,
-                am.MovieId
+                am.AuthorId,
+                am.BookId
             });
 
-            modelBuilder.Entity<Actor_Movie>().HasOne(m => m.Movie).WithMany(am => am.Actors_Movies).HasForeignKey(m => m.MovieId);
-            modelBuilder.Entity<Actor_Movie>().HasOne(m => m.Actor).WithMany(am => am.Actors_Movies).HasForeignKey(m => m.ActorId);
+            modelBuilder.Entity<Author_Book>().HasOne(m => m.Book).WithMany(am => am.Authors_Books).HasForeignKey(m => m.BookId);
+            modelBuilder.Entity<Author_Book>().HasOne(m => m.Author).WithMany(am => am.Authors_Books).HasForeignKey(m => m.AuthorId);
 
 
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Actor> Actors { get; set; }
-        public DbSet<Movie> Movies { get; set; }
-        public DbSet<Actor_Movie> Actors_Movies { get; set; }
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Author_Book> Authors_Books { get; set; }
         public DbSet<Cinema> Cinemas { get; set; }
         public DbSet<Producer> Producers { get; set; }
 

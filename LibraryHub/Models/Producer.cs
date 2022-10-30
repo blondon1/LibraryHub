@@ -26,6 +26,6 @@ namespace LibraryHub.Models
         public string Bio { get; set; }
 
         //Relationships
-        public List<Movie> Movies { get; set; }
+        public List<Book> Books { get; set; }
     }
 }
