@@ -29,7 +29,7 @@ namespace LibraryHub.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Author> Authors { get; set; }
+        public DbSet<Author> Authors { get; set; } 
         public DbSet<Book> Books { get; set; }
         public DbSet<Author_Book> Authors_Books { get; set; }
         public DbSet<Cinema> Cinemas { get; set; }

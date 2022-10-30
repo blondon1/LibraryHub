@@ -62,7 +62,7 @@ namespace LibraryHub.Controllers
 
             ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
             ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
-            ViewBag.Actors = new SelectList(movieDropdownsData.Author, "Id", "FullName");
+            ViewBag.Authors = new SelectList(movieDropdownsData.Author, "Id", "FullName");
 
             return View();
         }
