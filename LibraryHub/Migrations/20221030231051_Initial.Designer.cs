@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryHub.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221030134443_Initial")]
+    [Migration("20221030231051_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -181,7 +181,7 @@ namespace LibraryHub.Migrations
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("LibraryHub.Models.Cinema", b =>
+            modelBuilder.Entity("LibraryHub.Models.Edition", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -203,7 +203,7 @@ namespace LibraryHub.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cinemas");
+                    b.ToTable("Editions");
                 });
 
             modelBuilder.Entity("LibraryHub.Models.Order", b =>
@@ -258,7 +258,7 @@ namespace LibraryHub.Migrations
                     b.ToTable("OrderItems");
                 });
 
-            modelBuilder.Entity("LibraryHub.Models.Producer", b =>
+            modelBuilder.Entity("LibraryHub.Models.Publisher", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -281,7 +281,7 @@ namespace LibraryHub.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Producers");
+                    b.ToTable("Publishers");
                 });
 
             modelBuilder.Entity("LibraryHub.Models.ShoppingCartItem", b =>
@@ -463,13 +463,13 @@ namespace LibraryHub.Migrations
 
             modelBuilder.Entity("LibraryHub.Models.Book", b =>
                 {
-                    b.HasOne("LibraryHub.Models.Cinema", "Cinema")
+                    b.HasOne("LibraryHub.Models.Edition", "Cinema")
                         .WithMany("Movies")
                         .HasForeignKey("CinemaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LibraryHub.Models.Producer", "Producer")
+                    b.HasOne("LibraryHub.Models.Publisher", "Producer")
                         .WithMany("Books")
                         .HasForeignKey("ProducerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -582,7 +582,7 @@ namespace LibraryHub.Migrations
                     b.Navigation("Authors_Books");
                 });
 
-            modelBuilder.Entity("LibraryHub.Models.Cinema", b =>
+            modelBuilder.Entity("LibraryHub.Models.Edition", b =>
                 {
                     b.Navigation("Movies");
                 });
@@ -592,7 +592,7 @@ namespace LibraryHub.Migrations
                     b.Navigation("OrderItems");
                 });
 
-            modelBuilder.Entity("LibraryHub.Models.Producer", b =>
+            modelBuilder.Entity("LibraryHub.Models.Publisher", b =>
                 {
                     b.Navigation("Books");
                 });

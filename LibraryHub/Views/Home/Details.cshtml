@@ -25,13 +25,13 @@
                         <p class="card-text">@Model.Description</p>
                         <p class="card-text">
                             <b>Cinema: </b>
-                            <a asp-controller="Cinemas" asp-action="Details" asp-route-id="@Model.CinemaId">
+                            <a asp-controller="Edition" asp-action="Details" asp-route-id="@Model.CinemaId">
                                 @Model.Cinema.Name
                             </a>
                         </p>
                         <p class="card-text">
                             <b>Producer: </b>
-                            <a asp-controller="Producers" asp-action="Details" asp-route-id="@Model.ProducerId">
+                            <a asp-controller="Publishers" asp-action="Details" asp-route-id="@Model.ProducerId">
                                 @Model.Producer.FullName
                             </a>
                         </p>

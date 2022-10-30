@@ -32,8 +32,8 @@ namespace LibraryHub.Data
         public DbSet<Author> Authors { get; set; } 
         public DbSet<Book> Books { get; set; }
         public DbSet<Author_Book> Authors_Books { get; set; }
-        public DbSet<Edition> Cinemas { get; set; }
-        public DbSet<Publisher> Producers { get; set; }
+        public DbSet<Edition> Editions { get; set; }
+        public DbSet<Publisher> Publishers { get; set; }
 
 
         //Orders related tables

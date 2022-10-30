@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace LibraryHub.Data.Services
 {
-    public class CinemasService:EntityBaseRepository<Edition>, ICinemasService
+    public class PublishersService: EntityBaseRepository<Publisher>, IPublishersService
     {
-        public CinemasService(AppDbContext context) : base(context)
+        public PublishersService(AppDbContext context) : base(context)
         {
         }
     }

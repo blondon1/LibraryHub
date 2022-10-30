@@ -1,7 +1,7 @@
-﻿@model IEnumerable<Edition>
+﻿@model IEnumerable<Publisher>
 
 @{
-    ViewData["Title"] = "List of Cinemas";
+    ViewData["Title"] = "List of Publishers";
 }
 
 <div class="body-container2 row">
@@ -10,9 +10,9 @@
         <table class="table">
             <thead>
                 <tr class="text-center">
-                    <th>@Html.DisplayNameFor(model => model.Logo)</th>
-                    <th>@Html.DisplayNameFor(model => model.Name)</th>
-                    <th>@Html.DisplayNameFor(model => model.Description)</th>
+                    <th>@Html.DisplayNameFor(model => model.ProfilePictureURL)</th>
+                    <th>@Html.DisplayNameFor(model => model.FullName)</th>
+                    <th>@Html.DisplayNameFor(model => model.Bio)</th>
                     @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                     {
                         <th>Actions</th>
@@ -24,13 +24,13 @@
                 {
                 <tr>
                     <td class="align-middle">
-                        <img class="rounded-circle" src="@item.Logo" alt="@item.Name" style="max-width: 150px" />
+                        <img class="rounded-circle" src="@item.ProfilePictureURL" alt="@item.FullName" style="max-width: 150px" />
                     </td>
                     <td class="align-middle">
-                        @Html.DisplayFor(modelItem => item.Name)
+                        @Html.DisplayFor(modelItem => item.FullName)
                     </td>
                     <td class="align-middle">
-                        @Html.DisplayFor(modelItem => item.Description)
+                        @Html.DisplayFor(modelItem => item.Bio)
                     </td>
                     @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                     {
@@ -43,10 +43,8 @@
                     </tr>
                 }
             </tbody>
-
         </table>
-
     </div>
 </div>
 
-@await Html.PartialAsync("_CreateItem", "Cinemas") 
+@await Html.PartialAsync("_CreateItem", "Publishers") 

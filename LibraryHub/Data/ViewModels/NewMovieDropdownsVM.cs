@@ -10,13 +10,13 @@ namespace LibraryHub.Data.ViewModels
     {
         public NewMovieDropdownsVM()
         {
-            Producers = new List<Publisher>();
-            Cinemas = new List<Edition>();
+            Publishers = new List<Publisher>();
+            Edition = new List<Edition>();
             Author = new List<Author>();
         }
 
-        public List<Publisher> Producers { get; set; }
-        public List<Edition> Cinemas { get; set; }
+        public List<Publisher> Publishers { get; set; }
+        public List<Edition> Edition { get; set; }
         public List<Author> Author { get; set; }
     }
 }

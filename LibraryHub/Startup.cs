@@ -37,8 +37,8 @@ namespace LibraryHub
 
             //Services configuration
             services.AddScoped<IAuthorsService, AuthorsService>();
-            services.AddScoped<IProducersService, ProducersService>();
-            services.AddScoped<ICinemasService, CinemasService>();
+            services.AddScoped<IPublishersService, PublishersService>();
+            services.AddScoped<IEditionService, EditionService>();
             services.AddScoped<IBooksService, BooksService>();
             services.AddScoped<IOrdersService, OrdersService>();
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryHub.Data.Services
 {
-    public interface IProducersService:IEntityBaseRepository<Publisher>
+    public interface IEditionService:IEntityBaseRepository<Edition>
     {
     }
 }

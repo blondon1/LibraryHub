@@ -65,7 +65,7 @@ namespace LibraryHub.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Cinemas",
+                name: "Editions",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -76,11 +76,11 @@ namespace LibraryHub.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cinemas", x => x.Id);
+                    table.PrimaryKey("PK_Editions", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Producers",
+                name: "Publishers",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -91,7 +91,7 @@ namespace LibraryHub.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Producers", x => x.Id);
+                    table.PrimaryKey("PK_Publishers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -240,15 +240,15 @@ namespace LibraryHub.Migrations
                 {
                     table.PrimaryKey("PK_Books", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Books_Cinemas_CinemaId",
+                        name: "FK_Books_Editions_CinemaId",
                         column: x => x.CinemaId,
-                        principalTable: "Cinemas",
+                        principalTable: "Editions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Books_Producers_ProducerId",
+                        name: "FK_Books_Publishers_ProducerId",
                         column: x => x.ProducerId,
-                        principalTable: "Producers",
+                        principalTable: "Publishers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -443,10 +443,10 @@ namespace LibraryHub.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Cinemas");
+                name: "Editions");
 
             migrationBuilder.DropTable(
-                name: "Producers");
+                name: "Publishers");
         }
     }
 }

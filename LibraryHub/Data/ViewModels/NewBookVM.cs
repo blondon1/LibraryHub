@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LibraryHub.Models
 {
-    public class NewMovieVM
+    public class NewBookVM
     {
         public int Id { get; set; }
 
@@ -39,7 +39,7 @@ namespace LibraryHub.Models
 
         [Display(Name = "Select a category")]
         [Required(ErrorMessage = "Book category is required")]
-        public MovieCategory MovieCategory { get; set; }
+        public BookCategory MovieCategory { get; set; }
 
         //Relationships
         [Display(Name = "Select actor(s)")]
@@ -50,8 +50,8 @@ namespace LibraryHub.Models
         [Required(ErrorMessage = "Book cinema is required")]
         public int CinemaId { get; set; }
 
-        [Display(Name = "Select a producer")]
-        [Required(ErrorMessage = "Book producer is required")]
+        [Display(Name = "Select a Producer")]
+        [Required(ErrorMessage = "Book Producer is required")]
         public int ProducerId { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace LibraryHub.Data.Services
             _context = context;
         }
 
-        public async Task AddNewMovieAsync(NewMovieVM data)
+        public async Task AddNewMovieAsync(NewBookVM data)
         {
             var newMovie = new Book()
             {
@@ -63,14 +63,14 @@ namespace LibraryHub.Data.Services
             var response = new NewMovieDropdownsVM()
             {
                 Author = await _context.Authors.OrderBy(n => n.FullName).ToListAsync(),
-                Cinemas = await _context.Cinemas.OrderBy(n => n.Name).ToListAsync(),
-                Producers = await _context.Producers.OrderBy(n => n.FullName).ToListAsync()
+                Edition = await _context.Editions.OrderBy(n => n.Name).ToListAsync(),
+                Publishers = await _context.Publishers.OrderBy(n => n.FullName).ToListAsync()
             };
 
             return response;
         }
 
-        public async Task UpdateMovieAsync(NewMovieVM data)
+        public async Task UpdateMovieAsync(NewBookVM data)
         {
             var dbMovie = await _context.Books.FirstOrDefaultAsync(n => n.Id == data.Id);
 

@@ -5,13 +5,15 @@ using System.Threading.Tasks;
 
 namespace LibraryHub.Data
 {
-    public enum MovieCategory
+    public enum BookCategory
     {
         Action = 1,
         Comedy,
         Drama,
-        Documentary,
-        Cartoon,
-        Horror
+        Manga,
+        Kids,
+        Horror,
+        Autobiography,
+        Adventure
     }
 }

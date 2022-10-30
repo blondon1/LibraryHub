@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 namespace LibraryHub.Controllers
 {
     [Authorize(Roles = UserRoles.Admin)]
-    public class CinemasController : Controller
+    public class EditionsController : Controller
     {
-        private readonly ICinemasService _service;
+        private readonly IEditionService _service;
 
-        public CinemasController(ICinemasService service)
+        public EditionsController(IEditionService service)
         {
             _service = service;
         }
@@ -25,12 +25,12 @@ namespace LibraryHub.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            var allCinemas = await _service.GetAllAsync();
-            return View(allCinemas);
+            var allEdition = await _service.GetAllAsync();
+            return View(allEdition);
         }
 
 
-        //Get: Cinemas/Create
+        //Get: Edition/Create
         public IActionResult Create()
         {
             return View();
@@ -44,7 +44,7 @@ namespace LibraryHub.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //Get: Cinemas/Details/1
+        //Get: Edition/Details/1
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
@@ -53,7 +53,7 @@ namespace LibraryHub.Controllers
             return View(cinemaDetails);
         }
 
-        //Get: Cinemas/Edit/1
+        //Get: Edition/Edit/1
         public async Task<IActionResult> Edit(int id)
         {
             var cinemaDetails = await _service.GetByIdAsync(id);
@@ -69,7 +69,7 @@ namespace LibraryHub.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //Get: Cinemas/Delete/1
+        //Get: Edition/Delete/1
         public async Task<IActionResult> Delete(int id)
         {
             var cinemaDetails = await _service.GetByIdAsync(id);

@@ -12,7 +12,7 @@ namespace LibraryHub.Data.Services
     {
         Task<Book> GetMovieByIdAsync(int id);
         Task<NewMovieDropdownsVM> GetNewMovieDropdownsValues();
-        Task AddNewMovieAsync(NewMovieVM data);
-        Task UpdateMovieAsync(NewMovieVM data);
+        Task AddNewMovieAsync(NewBookVM data);
+        Task UpdateMovieAsync(NewBookVM data);
     }
 }

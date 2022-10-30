@@ -60,22 +60,22 @@ namespace LibraryHub.Controllers
         {
             var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
 
-            ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
-            ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
+            ViewBag.Edition = new SelectList(movieDropdownsData.Edition, "Id", "Name");
+            ViewBag.Publishers = new SelectList(movieDropdownsData.Publishers, "Id", "FullName");
             ViewBag.Authors = new SelectList(movieDropdownsData.Author, "Id", "FullName");
 
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(NewMovieVM movie)
+        public async Task<IActionResult> Create(NewBookVM movie)
         {
             if (!ModelState.IsValid)
             {
                 var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
 
-                ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
-                ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
+                ViewBag.Edition = new SelectList(movieDropdownsData.Edition, "Id", "Name");
+                ViewBag.Publishers = new SelectList(movieDropdownsData.Publishers, "Id", "FullName");
                 ViewBag.Actors = new SelectList(movieDropdownsData.Author, "Id", "FullName");
 
                 return View(movie);
@@ -92,7 +92,7 @@ namespace LibraryHub.Controllers
             var movieDetails = await _service.GetMovieByIdAsync(id);
             if (movieDetails == null) return View("NotFound");
 
-            var response = new NewMovieVM()
+            var response = new NewBookVM()
             {
                 Id = movieDetails.Id,
                 Name = movieDetails.Name,
@@ -108,15 +108,15 @@ namespace LibraryHub.Controllers
             };
 
             var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
-            ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
-            ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
+            ViewBag.Edition = new SelectList(movieDropdownsData.Edition, "Id", "Name");
+            ViewBag.Publishers = new SelectList(movieDropdownsData.Publishers, "Id", "FullName");
             ViewBag.Actors = new SelectList(movieDropdownsData.Author, "Id", "FullName");
 
             return View(response);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, NewMovieVM movie)
+        public async Task<IActionResult> Edit(int id, NewBookVM movie)
         {
             if (id != movie.Id) return View("NotFound");
 
@@ -124,8 +124,8 @@ namespace LibraryHub.Controllers
             {
                 var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
 
-                ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
-                ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
+                ViewBag.Edition = new SelectList(movieDropdownsData.Edition, "Id", "Name");
+                ViewBag.Publishers = new SelectList(movieDropdownsData.Publishers, "Id", "FullName");
                 ViewBag.Actors = new SelectList(movieDropdownsData.Author, "Id", "FullName");
 
                 return View(movie);
