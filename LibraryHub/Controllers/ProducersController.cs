@@ -45,7 +45,7 @@ namespace LibraryHub.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("ProfilePictureURL,FullName,Bio")]Producer producer)
+        public async Task<IActionResult> Create([Bind("ProfilePictureURL,FullName,Bio")]Publisher producer)
         {
             if (!ModelState.IsValid) return View(producer);
 
@@ -62,7 +62,7 @@ namespace LibraryHub.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ProfilePictureURL,FullName,Bio")] Producer producer)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ProfilePictureURL,FullName,Bio")] Publisher producer)
         {
             if (!ModelState.IsValid) return View(producer);
 

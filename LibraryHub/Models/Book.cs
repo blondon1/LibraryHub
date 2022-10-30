@@ -28,11 +28,11 @@ namespace LibraryHub.Models
         //Cinema
         public int CinemaId { get; set; }
         [ForeignKey("CinemaId")]
-        public Cinema Cinema { get; set; }
+        public Edition Cinema { get; set; }
 
         //Producer
         public int ProducerId { get; set; }
         [ForeignKey("ProducerId")]
-        public Producer Producer { get; set; }
+        public Publisher Producer { get; set; }
     }
 }

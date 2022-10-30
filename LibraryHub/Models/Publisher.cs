@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryHub.Models
 {
-    public class Producer:IEntityBase
+    public class Publisher:IEntityBase
     {
         [Key]
         public int Id { get; set; }

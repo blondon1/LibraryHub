@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryHub.Models
 {
-    public class Cinema:IEntityBase
+    public class Edition:IEntityBase
     {
         [Key]
         public int Id { get; set; }

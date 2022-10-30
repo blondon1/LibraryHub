@@ -37,7 +37,7 @@ namespace LibraryHub.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Logo,Name,Description")]Cinema cinema)
+        public async Task<IActionResult> Create([Bind("Logo,Name,Description")]Edition cinema)
         {
             if (!ModelState.IsValid) return View(cinema);
             await _service.AddAsync(cinema);
@@ -62,7 +62,7 @@ namespace LibraryHub.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Logo,Name,Description")] Cinema cinema)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Logo,Name,Description")] Edition cinema)
         {
             if (!ModelState.IsValid) return View(cinema);
             await _service.UpdateAsync(id, cinema);

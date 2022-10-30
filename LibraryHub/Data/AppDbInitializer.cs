@@ -24,33 +24,33 @@ namespace LibraryHub.Data
                 //Cinema
                 if (!context.Cinemas.Any())
                 {
-                    context.Cinemas.AddRange(new List<Cinema>()
+                    context.Cinemas.AddRange(new List<Edition>()
                     {
-                        new Cinema()
+                        new Edition()
                         {
                             Name = "Cinema 1",
                             Logo = "http://dotnethow.net/images/cinemas/cinema-1.jpeg",
                             Description = "This is the description of the first cinema"
                         },
-                        new Cinema()
+                        new Edition()
                         {
                             Name = "Cinema 2",
                             Logo = "http://dotnethow.net/images/cinemas/cinema-2.jpeg",
                             Description = "This is the description of the first cinema"
                         },
-                        new Cinema()
+                        new Edition()
                         {
                             Name = "Cinema 3",
                             Logo = "http://dotnethow.net/images/cinemas/cinema-3.jpeg",
                             Description = "This is the description of the first cinema"
                         },
-                        new Cinema()
+                        new Edition()
                         {
                             Name = "Cinema 4",
                             Logo = "http://dotnethow.net/images/cinemas/cinema-4.jpeg",
                             Description = "This is the description of the first cinema"
                         },
-                        new Cinema()
+                        new Edition()
                         {
                             Name = "Cinema 5",
                             Logo = "http://dotnethow.net/images/cinemas/cinema-5.jpeg",
@@ -101,34 +101,34 @@ namespace LibraryHub.Data
                 //Producers
                 if (!context.Producers.Any())
                 {
-                    context.Producers.AddRange(new List<Producer>()
+                    context.Producers.AddRange(new List<Publisher>()
                     {
-                        new Producer()
+                        new Publisher()
                         {
                             FullName = "Producer 1",
                             Bio = "This is the Bio of the first actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-1.jpeg"
 
                         },
-                        new Producer()
+                        new Publisher()
                         {
                             FullName = "Producer 2",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-2.jpeg"
                         },
-                        new Producer()
+                        new Publisher()
                         {
                             FullName = "Producer 3",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-3.jpeg"
                         },
-                        new Producer()
+                        new Publisher()
                         {
                             FullName = "Producer 4",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-4.jpeg"
                         },
-                        new Producer()
+                        new Publisher()
                         {
                             FullName = "Producer 5",
                             Bio = "This is the Bio of the second actor",

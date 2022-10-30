@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryHub.Data.Services
 {
-    public interface ICinemasService:IEntityBaseRepository<Cinema>
+    public interface ICinemasService:IEntityBaseRepository<Edition>
     {
     }
 }
