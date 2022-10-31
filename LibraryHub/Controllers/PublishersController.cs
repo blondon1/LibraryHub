@@ -45,11 +45,11 @@ namespace LibraryHub.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("ProfilePictureURL,FullName,Bio")]Publisher Producer)
+        public async Task<IActionResult> Create([Bind("ProfilePictureURL,FullName,Bio")]Publisher Publisher)
         {
-            if (!ModelState.IsValid) return View(Producer);
+            if (!ModelState.IsValid) return View(Publisher);
 
-            await _service.AddAsync(Producer);
+            await _service.AddAsync(Publisher);
             return RedirectToAction(nameof(Index));
         }
 
@@ -62,16 +62,16 @@ namespace LibraryHub.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ProfilePictureURL,FullName,Bio")] Publisher Producer)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ProfilePictureURL,FullName,Bio")] Publisher Publisher)
         {
-            if (!ModelState.IsValid) return View(Producer);
+            if (!ModelState.IsValid) return View(Publisher);
 
-            if(id == Producer.Id)
+            if(id == Publisher.Id)
             {
-                await _service.UpdateAsync(id, Producer);
+                await _service.UpdateAsync(id, Publisher);
                 return RedirectToAction(nameof(Index));
             }
-            return View(Producer);
+            return View(Publisher);
         }
 
         //GET: Publishers/delete/1

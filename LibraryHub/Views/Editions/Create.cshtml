@@ -7,7 +7,7 @@
 <div class="body-container2 row text">
     <div class="col-md-8 offset-2">
         <p>
-            <h1>Add a New Cinema</h1>
+            <h1>Add a New Edition</h1>
         </p>
         <div class="row">
             <div class="col-md-8 offset-2">
@@ -15,7 +15,7 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                     <div class="form-group text-center">
-                        <img id="CinemaLogoPreview"  class="border-info rounded-circle" style="max-width: 150px" />
+                        <img id="EditionLogoPreview"  class="border-info rounded-circle" style="max-width: 150px" />
                     </div>
                     <div class="form-group">
                         <label asp-for="Logo" class="control-label"></label>
@@ -47,12 +47,12 @@
     <script>
 
         $(document).ready(function () {
-            var output = document.getElementById('CinemaLogoPreview');
+            var output = document.getElementById('EditionLogoPreview');
             output.src = $("#Logo").val();
         })
 
         $("#Logo").on("change", function () {
-            var output = document.getElementById('CinemaLogoPreview');
+            var output = document.getElementById('EditionLogoPreview');
             output.src = $(this).val();
         })
     </script>

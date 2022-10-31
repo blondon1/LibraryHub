@@ -48,10 +48,10 @@ namespace LibraryHub.Models
 
         [Display(Name = "Select a cinema")]
         [Required(ErrorMessage = "Book cinema is required")]
-        public int CinemaId { get; set; }
+        public int EditionId { get; set; }
 
-        [Display(Name = "Select a Producer")]
-        [Required(ErrorMessage = "Book Producer is required")]
-        public int ProducerId { get; set; }
+        [Display(Name = "Select a Publisher")]
+        [Required(ErrorMessage = "Book Publisher is required")]
+        public int PublisherId { get; set; }
     }
 }

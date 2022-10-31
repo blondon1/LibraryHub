@@ -25,14 +25,14 @@ namespace LibraryHub.Models
         //Relationships
         public List<Author_Book> Authors_Books { get; set; }
 
-        //Cinema
-        public int CinemaId { get; set; }
-        [ForeignKey("CinemaId")]
-        public Edition Cinema { get; set; }
+        //Edition
+        public int EditionId { get; set; }
+        [ForeignKey("EditionId")]
+        public Edition Edition { get; set; }
 
-        //Producer
-        public int ProducerId { get; set; }
-        [ForeignKey("ProducerId")]
-        public Publisher Producer { get; set; }
+        //Publisher
+        public int PublisherId { get; set; }
+        [ForeignKey("PublisherId")]
+        public Publisher Publisher { get; set; }
     }
 }

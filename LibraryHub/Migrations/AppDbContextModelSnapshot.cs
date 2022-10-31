@@ -140,12 +140,12 @@ namespace LibraryHub.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CinemaId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EditionId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
@@ -164,7 +164,7 @@ namespace LibraryHub.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<int>("ProducerId")
+                    b.Property<int>("PublisherId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("StartDate")
@@ -172,9 +172,9 @@ namespace LibraryHub.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CinemaId");
+                    b.HasIndex("EditionId");
 
-                    b.HasIndex("ProducerId");
+                    b.HasIndex("PublisherId");
 
                     b.ToTable("Books");
                 });
@@ -238,7 +238,7 @@ namespace LibraryHub.Migrations
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<int>("MovieId")
+                    b.Property<int>("BookId")
                         .HasColumnType("int");
 
                     b.Property<int>("OrderId")
@@ -249,7 +249,7 @@ namespace LibraryHub.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MovieId");
+                    b.HasIndex("BookId");
 
                     b.HasIndex("OrderId");
 
@@ -461,21 +461,21 @@ namespace LibraryHub.Migrations
 
             modelBuilder.Entity("LibraryHub.Models.Book", b =>
                 {
-                    b.HasOne("LibraryHub.Models.Edition", "Cinema")
+                    b.HasOne("LibraryHub.Models.Edition", "Edition")
                         .WithMany("Movies")
-                        .HasForeignKey("CinemaId")
+                        .HasForeignKey("EditionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LibraryHub.Models.Publisher", "Producer")
+                    b.HasOne("LibraryHub.Models.Publisher", "Publisher")
                         .WithMany("Books")
-                        .HasForeignKey("ProducerId")
+                        .HasForeignKey("PublisherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Cinema");
+                    b.Navigation("Edition");
 
-                    b.Navigation("Producer");
+                    b.Navigation("Publisher");
                 });
 
             modelBuilder.Entity("LibraryHub.Models.Order", b =>
@@ -493,7 +493,7 @@ namespace LibraryHub.Migrations
                 {
                     b.HasOne("LibraryHub.Models.Book", "Book")
                         .WithMany()
-                        .HasForeignKey("MovieId")
+                        .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

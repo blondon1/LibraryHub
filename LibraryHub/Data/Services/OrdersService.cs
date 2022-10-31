@@ -42,7 +42,7 @@ namespace LibraryHub.Data.Services
                 var orderItem = new OrderItem()
                 {
                     Amount = item.Amount,
-                    MovieId = item.Book.Id,
+                    BookId = item.Book.Id,
                     OrderId = order.Id,
                     Price = item.Book.Price
                 };

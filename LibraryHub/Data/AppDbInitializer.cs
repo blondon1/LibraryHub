@@ -21,38 +21,38 @@ namespace LibraryHub.Data
 
                 context.Database.EnsureCreated();
 
-                //Cinema
+                //Edition
                 if (!context.Editions.Any())
                 {
                     context.Editions.AddRange(new List<Edition>()
                     {
                         new Edition()
                         {
-                            Name = "Cinema 1",
+                            Name = "Edition 1",
                             Logo = "http://dotnethow.net/images/cinema/cinema-1.jpeg",
                             Description = "This is the description of the first cinema"
                         },
                         new Edition()
                         {
-                            Name = "Cinema 2",
+                            Name = "Edition 2",
                             Logo = "http://dotnethow.net/images/cinema/cinema-2.jpeg",
                             Description = "This is the description of the first cinema"
                         },
                         new Edition()
                         {
-                            Name = "Cinema 3",
+                            Name = "Edition 3",
                             Logo = "http://dotnethow.net/images/cinema/cinema-3.jpeg",
                             Description = "This is the description of the first cinema"
                         },
                         new Edition()
                         {
-                            Name = "Cinema 4",
+                            Name = "Edition 4",
                             Logo = "http://dotnethow.net/images/cinema/cinema-4.jpeg",
                             Description = "This is the description of the first cinema"
                         },
                         new Edition()
                         {
-                            Name = "Cinema 5",
+                            Name = "Edition 5",
                             Logo = "http://dotnethow.net/images/cinema/cinema-5.jpeg",
                             Description = "This is the description of the first cinema"
                         },
@@ -105,34 +105,34 @@ namespace LibraryHub.Data
                     {
                         new Publisher()
                         {
-                            FullName = "Producer 1",
+                            FullName = "Publisher 1",
                             Bio = "This is the Bio of the first actor",
-                            ProfilePictureURL = "http://dotnethow.net/images/producer/Producer-1.jpeg"
+                            ProfilePictureURL = "http://dotnethow.net/images/producer/Publisher-1.jpeg"
 
                         },
                         new Publisher()
                         {
-                            FullName = "Producer 2",
+                            FullName = "Publisher 2",
                             Bio = "This is the Bio of the second actor",
-                            ProfilePictureURL = "http://dotnethow.net/images/producer/Producer-2.jpeg"
+                            ProfilePictureURL = "http://dotnethow.net/images/producer/Publisher-2.jpeg"
                         },
                         new Publisher()
                         {
-                            FullName = "Producer 3",
+                            FullName = "Publisher 3",
                             Bio = "This is the Bio of the second actor",
-                            ProfilePictureURL = "http://dotnethow.net/images/producer/Producer-3.jpeg"
+                            ProfilePictureURL = "http://dotnethow.net/images/producer/Publisher-3.jpeg"
                         },
                         new Publisher()
                         {
-                            FullName = "Producer 4",
+                            FullName = "Publisher 4",
                             Bio = "This is the Bio of the second actor",
-                            ProfilePictureURL = "http://dotnethow.net/images/producer/Producer-4.jpeg"
+                            ProfilePictureURL = "http://dotnethow.net/images/producer/Publisher-4.jpeg"
                         },
                         new Publisher()
                         {
-                            FullName = "Producer 5",
+                            FullName = "Publisher 5",
                             Bio = "This is the Bio of the second actor",
-                            ProfilePictureURL = "http://dotnethow.net/images/producer/Producer-5.jpeg"
+                            ProfilePictureURL = "http://dotnethow.net/images/producer/Publisher-5.jpeg"
                         }
                     });
                     context.SaveChanges();
@@ -150,8 +150,8 @@ namespace LibraryHub.Data
                             ImageURL = "http://dotnethow.net/images/movies/movie-3.jpeg",
                             StartDate = DateTime.Now.AddDays(-10),
                             EndDate = DateTime.Now.AddDays(10),
-                            CinemaId = 3,
-                            ProducerId = 3,
+                            EditionId = 3,
+                            PublisherId = 3,
                             MovieCategory = BookCategory.Horror
                         },
                         new Book()
@@ -162,8 +162,8 @@ namespace LibraryHub.Data
                             ImageURL = "http://dotnethow.net/images/movies/movie-1.jpeg",
                             StartDate = DateTime.Now,
                             EndDate = DateTime.Now.AddDays(3),
-                            CinemaId = 1,
-                            ProducerId = 1,
+                            EditionId = 1,
+                            PublisherId = 1,
                             MovieCategory = BookCategory.Action
                         },
                         new Book()
@@ -174,8 +174,8 @@ namespace LibraryHub.Data
                             ImageURL = "http://dotnethow.net/images/movies/movie-4.jpeg",
                             StartDate = DateTime.Now,
                             EndDate = DateTime.Now.AddDays(7),
-                            CinemaId = 4,
-                            ProducerId = 4,
+                            EditionId = 4,
+                            PublisherId = 4,
                             MovieCategory = BookCategory.Horror
                         },
                         new Book()
@@ -186,8 +186,8 @@ namespace LibraryHub.Data
                             ImageURL = "http://dotnethow.net/images/movies/movie-6.jpeg",
                             StartDate = DateTime.Now.AddDays(-10),
                             EndDate = DateTime.Now.AddDays(-5),
-                            CinemaId = 1,
-                            ProducerId = 2,
+                            EditionId = 1,
+                            PublisherId = 2,
                             MovieCategory = BookCategory.Horror
                         },
                         new Book()
@@ -198,8 +198,8 @@ namespace LibraryHub.Data
                             ImageURL = "http://dotnethow.net/images/movies/movie-7.jpeg",
                             StartDate = DateTime.Now.AddDays(-10),
                             EndDate = DateTime.Now.AddDays(-2),
-                            CinemaId = 1,
-                            ProducerId = 3,
+                            EditionId = 1,
+                            PublisherId = 3,
                             MovieCategory = BookCategory.Horror
                         },
                         new Book()
@@ -210,8 +210,8 @@ namespace LibraryHub.Data
                             ImageURL = "http://dotnethow.net/images/movies/movie-8.jpeg",
                             StartDate = DateTime.Now.AddDays(3),
                             EndDate = DateTime.Now.AddDays(20),
-                            CinemaId = 1,
-                            ProducerId = 5,
+                            EditionId = 1,
+                            PublisherId = 5,
                             MovieCategory = BookCategory.Drama
                         }
                     });

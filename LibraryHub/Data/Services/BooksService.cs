@@ -25,16 +25,16 @@ namespace LibraryHub.Data.Services
                 Description = data.Description,
                 Price = data.Price,
                 ImageURL = data.ImageURL,
-                CinemaId = data.CinemaId,
+                EditionId = data.EditionId,
                 StartDate = data.StartDate,
                 EndDate = data.EndDate,
                 MovieCategory = data.MovieCategory,
-                ProducerId = data.ProducerId
+                PublisherId = data.PublisherId
             };
             await _context.Books.AddAsync(newMovie);
             await _context.SaveChangesAsync();
 
-            //Add Movie Actors
+            //Add Book Actors
             foreach (var actorId in data.AuthorIds)
             {
                 var newActorMovie = new Author_Book()
@@ -50,8 +50,8 @@ namespace LibraryHub.Data.Services
         public async Task<Book> GetMovieByIdAsync(int id)
         {
             var movieDetails = await _context.Books
-                .Include(c => c.Cinema)
-                .Include(p => p.Producer)
+                .Include(c => c.Edition)
+                .Include(p => p.Publisher)
                 .Include(am => am.Authors_Books).ThenInclude(a => a.Author)
                 .FirstOrDefaultAsync(n => n.Id == id);
 
@@ -80,11 +80,11 @@ namespace LibraryHub.Data.Services
                 dbMovie.Description = data.Description;
                 dbMovie.Price = data.Price;
                 dbMovie.ImageURL = data.ImageURL;
-                dbMovie.CinemaId = data.CinemaId;
+                dbMovie.EditionId = data.EditionId;
                 dbMovie.StartDate = data.StartDate;
                 dbMovie.EndDate = data.EndDate;
                 dbMovie.MovieCategory = data.MovieCategory;
-                dbMovie.ProducerId = data.ProducerId;
+                dbMovie.PublisherId = data.PublisherId;
                 await _context.SaveChangesAsync();
             }
 
@@ -93,7 +93,7 @@ namespace LibraryHub.Data.Services
             _context.Authors_Books.RemoveRange(existingActorsDb);
             await _context.SaveChangesAsync();
 
-            //Add Movie Actors
+            //Add Book Actors
             foreach (var actorId in data.AuthorIds)
             {
                 var newActorMovie = new Author_Book()

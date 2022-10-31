@@ -233,21 +233,21 @@ namespace LibraryHub.Migrations
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     MovieCategory = table.Column<int>(type: "int", nullable: false),
-                    CinemaId = table.Column<int>(type: "int", nullable: false),
-                    ProducerId = table.Column<int>(type: "int", nullable: false)
+                    EditionId = table.Column<int>(type: "int", nullable: false),
+                    PublisherId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Books", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Books_Editions_CinemaId",
-                        column: x => x.CinemaId,
+                        name: "FK_Books_Editions_EditionId",
+                        column: x => x.EditionId,
                         principalTable: "Editions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Books_Publishers_ProducerId",
-                        column: x => x.ProducerId,
+                        name: "FK_Books_Publishers_PublisherId",
+                        column: x => x.PublisherId,
                         principalTable: "Publishers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -285,15 +285,15 @@ namespace LibraryHub.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Amount = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<double>(type: "float", nullable: false),
-                    MovieId = table.Column<int>(type: "int", nullable: false),
+                    BookId = table.Column<int>(type: "int", nullable: false),
                     OrderId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_OrderItems", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_OrderItems_Books_MovieId",
-                        column: x => x.MovieId,
+                        name: "FK_OrderItems_Books_BookId",
+                        column: x => x.BookId,
                         principalTable: "Books",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -371,19 +371,19 @@ namespace LibraryHub.Migrations
                 column: "BookId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Books_CinemaId",
+                name: "IX_Books_EditionId",
                 table: "Books",
-                column: "CinemaId");
+                column: "EditionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Books_ProducerId",
+                name: "IX_Books_PublisherId",
                 table: "Books",
-                column: "ProducerId");
+                column: "PublisherId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderItems_MovieId",
+                name: "IX_OrderItems_BookId",
                 table: "OrderItems",
-                column: "MovieId");
+                column: "BookId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OrderItems_OrderId",

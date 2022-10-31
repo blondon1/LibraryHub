@@ -24,15 +24,15 @@
                     <div class="card-body">
                         <p class="card-text">@Model.Description</p>
                         <p class="card-text">
-                            <b>Cinema: </b>
-                            <a asp-controller="Edition" asp-action="Details" asp-route-id="@Model.CinemaId">
-                                @Model.Cinema.Name
+                            <b>Edition: </b>
+                            <a asp-controller="Edition" asp-action="Details" asp-route-id="@Model.EditionId">
+                                @Model.Edition.Name
                             </a>
                         </p>
                         <p class="card-text">
-                            <b>Producer: </b>
-                            <a asp-controller="Publishers" asp-action="Details" asp-route-id="@Model.ProducerId">
-                                @Model.Producer.FullName
+                            <b>Publisher: </b>
+                            <a asp-controller="Publishers" asp-action="Details" asp-route-id="@Model.PublisherId">
+                                @Model.Publisher.FullName
                             </a>
                         </p>
                         <p class="card-text"><b>Category: </b>@Model.MovieCategory</p>

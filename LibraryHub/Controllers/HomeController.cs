@@ -26,14 +26,14 @@ namespace LibraryHub.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            var allMovies = await _service.GetAllAsync(n => n.Cinema);
+            var allMovies = await _service.GetAllAsync(n => n.Edition);
             return View(allMovies);
         }
 
         [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchString)
         {
-            var allMovies = await _service.GetAllAsync(n => n.Cinema);
+            var allMovies = await _service.GetAllAsync(n => n.Edition);
 
             if (!string.IsNullOrEmpty(searchString))
             {
@@ -102,8 +102,8 @@ namespace LibraryHub.Controllers
                 EndDate = movieDetails.EndDate,
                 ImageURL = movieDetails.ImageURL,
                 MovieCategory = movieDetails.MovieCategory,
-                CinemaId = movieDetails.CinemaId,
-                ProducerId = movieDetails.ProducerId,
+                EditionId = movieDetails.EditionId,
+                PublisherId = movieDetails.PublisherId,
                 AuthorIds = movieDetails.Authors_Books.Select(n => n.AuthorId).ToList(),
             };
 
