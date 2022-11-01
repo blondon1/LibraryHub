@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Book>
 
 @{
-    ViewData["Title"] = "List of Movies";
+    ViewData["Title"] = "List of Books";
 }
 
 
@@ -9,10 +9,10 @@
     @foreach (var item in Model)
     {
         <div class="body-container2 col-md-4 col-xs-6 border-primary mb-3">
-            <div class="card mb-3" style="max-width: 540px;">
+            <div class="border border-dark border-5 card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-12">
-                        <div class="card-header text-white bg-info">
+                        <div class="card-header text-white bg-dark">
                             <p class="card-text">
                                 <h5 class="card-title">
                                     @item.Name
@@ -24,14 +24,14 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="border border-dark border-5 bg-dark col-md-6">
                         <img src="@item.ImageURL" width="100%" alt="@item.Name">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
                             <p class="card-text">@item.Description</p>
                             <p class="card-text"><b>Edition: </b>@item.Edition.Name</p>
-                            <p class="card-text"><b>Category: </b>@item.MovieCategory</p>
+                            <p class="card-text"><b>Category: </b>@item.BookCategory</p>
                             <p class="card-text"><b>Start Date: </b>@item.StartDate.ToString("dd MMM yy")</p>
                             <p class="card-text"><b>End Date: </b>@item.EndDate.ToString("dd MMM yy")</p>
                             <p class="card-text ">

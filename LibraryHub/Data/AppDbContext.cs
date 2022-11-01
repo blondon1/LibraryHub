@@ -16,19 +16,20 @@ namespace LibraryHub.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //generate the default authentiticatizion tables
             modelBuilder.Entity<Author_Book>().HasKey(am => new
             {
                 am.AuthorId,
                 am.BookId
             });
-
+            //csharp side
             modelBuilder.Entity<Author_Book>().HasOne(m => m.Book).WithMany(am => am.Authors_Books).HasForeignKey(m => m.BookId);
             modelBuilder.Entity<Author_Book>().HasOne(m => m.Author).WithMany(am => am.Authors_Books).HasForeignKey(m => m.AuthorId);
 
 
             base.OnModelCreating(modelBuilder);
         }
-
+        //table names for each model
         public DbSet<Author> Authors { get; set; } 
         public DbSet<Book> Books { get; set; }
         public DbSet<Author_Book> Authors_Books { get; set; }

@@ -28,7 +28,7 @@ namespace LibraryHub.Controllers
             return View(data);
         }
 
-        //Get: Actors/Create
+        //Get: Authors/Create
         public IActionResult Create()
         {
             return View();
@@ -45,7 +45,7 @@ namespace LibraryHub.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //Get: Actors/Details/1
+        //Get: Authors/Details/1
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
@@ -55,7 +55,7 @@ namespace LibraryHub.Controllers
             return View(actorDetails);
         }
 
-        //Get: Actors/Edit/1
+        //Get: Authors/Edit/1
         public async Task<IActionResult> Edit(int id)
         {
             var actorDetails = await _service.GetByIdAsync(id);
@@ -74,7 +74,7 @@ namespace LibraryHub.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //Get: Actors/Delete/1
+        //Get: Authors/Delete/1
         public async Task<IActionResult> Delete(int id)
         {
             var actorDetails = await _service.GetByIdAsync(id);

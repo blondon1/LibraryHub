@@ -232,7 +232,7 @@ namespace LibraryHub.Migrations
                     ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    MovieCategory = table.Column<int>(type: "int", nullable: false),
+                    BookCategory = table.Column<int>(type: "int", nullable: false),
                     EditionId = table.Column<int>(type: "int", nullable: false),
                     PublisherId = table.Column<int>(type: "int", nullable: false)
                 },

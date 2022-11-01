@@ -20,7 +20,7 @@ namespace LibraryHub.Models
         public string ImageURL { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public BookCategory MovieCategory { get; set; }
+        public BookCategory BookCategory { get; set; }
 
         //Relationships
         public List<Author_Book> Authors_Books { get; set; }

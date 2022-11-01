@@ -140,6 +140,9 @@ namespace LibraryHub.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("BookCategory")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -153,9 +156,6 @@ namespace LibraryHub.Migrations
                     b.Property<string>("ImageURL")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MovieCategory")
-                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -462,7 +462,7 @@ namespace LibraryHub.Migrations
             modelBuilder.Entity("LibraryHub.Models.Book", b =>
                 {
                     b.HasOne("LibraryHub.Models.Edition", "Edition")
-                        .WithMany("Movies")
+                        .WithMany("Books")
                         .HasForeignKey("EditionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -582,7 +582,7 @@ namespace LibraryHub.Migrations
 
             modelBuilder.Entity("LibraryHub.Models.Edition", b =>
                 {
-                    b.Navigation("Movies");
+                    b.Navigation("Books");
                 });
 
             modelBuilder.Entity("LibraryHub.Models.Order", b =>

@@ -15,13 +15,13 @@ namespace LibraryHub.Controllers
     [Authorize] 
     public class OrdersController : Controller
     {
-        private readonly IBooksService _moviesService;
+        private readonly IBooksService _BooksService;
         private readonly ShoppingCart _shoppingCart;
         private readonly IOrdersService _ordersService;
 
-        public OrdersController(IBooksService moviesService, ShoppingCart shoppingCart, IOrdersService ordersService)
+        public OrdersController(IBooksService BooksService, ShoppingCart shoppingCart, IOrdersService ordersService)
         {
-            _moviesService = moviesService;
+            _BooksService = BooksService;
             _shoppingCart = shoppingCart;
             _ordersService = ordersService;
         }
@@ -51,7 +51,7 @@ namespace LibraryHub.Controllers
 
         public async Task<IActionResult> AddItemToShoppingCart(int id)
         {
-            var item = await _moviesService.GetMovieByIdAsync(id);
+            var item = await _BooksService.GetMovieByIdAsync(id);
 
             if (item != null)
             {
@@ -62,7 +62,7 @@ namespace LibraryHub.Controllers
 
         public async Task<IActionResult> RemoveItemFromShoppingCart(int id)
         {
-            var item = await _moviesService.GetMovieByIdAsync(id);
+            var item = await _BooksService.GetMovieByIdAsync(id);
 
             if (item != null)
             {

@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/styles.css" />
+    <link rel="stylesheet" href="~/css/lib/scss/custom.scss" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     
     
@@ -46,7 +47,7 @@
 
 
             <form class="navbar-nav ms-auto form-inline my-2 my-lg-0" id="navbarResponsive" asp-controller="Home" asp-action="Filter" style="padding-right: 25px;">
-                <input name="searchString" type="text" class="form-control" placeholder="Search for a movie..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                <input name="searchString" type="text" class="form-control" placeholder="Search for a book..." aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button class=" btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
             </form>
 
@@ -96,7 +97,7 @@
 
 
 
-    <div class="container-fluid body-container">
+    <div class="container-fluid body-container backg1 backg2 backg3">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

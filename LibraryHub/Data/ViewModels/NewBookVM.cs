@@ -39,15 +39,15 @@ namespace LibraryHub.Models
 
         [Display(Name = "Select a category")]
         [Required(ErrorMessage = "Book category is required")]
-        public BookCategory MovieCategory { get; set; }
+        public BookCategory BookCategory { get; set; }
 
         //Relationships
-        [Display(Name = "Select actor(s)")]
-        [Required(ErrorMessage = "Book actor(s) is required")]
+        [Display(Name = "Select author(s)")]
+        [Required(ErrorMessage = "Book author(s) is required")]
         public List<int> AuthorIds { get; set; }
 
-        [Display(Name = "Select a cinema")]
-        [Required(ErrorMessage = "Book cinema is required")]
+        [Display(Name = "Select a edition")]
+        [Required(ErrorMessage = "Book edition is required")]
         public int EditionId { get; set; }
 
         [Display(Name = "Select a Publisher")]

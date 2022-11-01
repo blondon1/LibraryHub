@@ -26,28 +26,28 @@ namespace LibraryHub.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            var allMovies = await _service.GetAllAsync(n => n.Edition);
-            return View(allMovies);
+            var allBooks = await _service.GetAllAsync(n => n.Edition);
+            return View(allBooks);
         }
 
         [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchString)
         {
-            var allMovies = await _service.GetAllAsync(n => n.Edition);
+            var allBooks = await _service.GetAllAsync(n => n.Edition);
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                //var filteredResult = allMovies.Where(n => n.Name.ToLower().Contains(searchString.ToLower()) || n.Description.ToLower().Contains(searchString.ToLower())).ToList();
+                //var filteredResult = allBooks.Where(n => n.Name.ToLower().Contains(searchString.ToLower()) || n.Description.ToLower().Contains(searchString.ToLower())).ToList();
 
-                var filteredResultNew = allMovies.Where(n => string.Equals(n.Name, searchString, StringComparison.CurrentCultureIgnoreCase) || string.Equals(n.Description, searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
+                var filteredResultNew = allBooks.Where(n => string.Equals(n.Name, searchString, StringComparison.CurrentCultureIgnoreCase) || string.Equals(n.Description, searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
 
                 return View("Index", filteredResultNew);
             }
 
-            return View("Index", allMovies);
+            return View("Index", allBooks);
         }
 
-        //GET: Movies/Details/1
+        //GET: Books/Details/1
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
@@ -55,7 +55,7 @@ namespace LibraryHub.Controllers
             return View(movieDetail);
         }
 
-        //GET: Movies/Create
+        //GET: Books/Create
         public async Task<IActionResult> Create()
         {
             var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
@@ -68,7 +68,7 @@ namespace LibraryHub.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(NewBookVM movie)
+        public async Task<IActionResult> Create(NewBookVM book)
         {
             if (!ModelState.IsValid)
             {
@@ -76,17 +76,17 @@ namespace LibraryHub.Controllers
 
                 ViewBag.Edition = new SelectList(movieDropdownsData.Edition, "Id", "Name");
                 ViewBag.Publishers = new SelectList(movieDropdownsData.Publishers, "Id", "FullName");
-                ViewBag.Actors = new SelectList(movieDropdownsData.Author, "Id", "FullName");
+                ViewBag.Authors = new SelectList(movieDropdownsData.Author, "Id", "FullName");
 
-                return View(movie);
+                return View(book);
             }
 
-            await _service.AddNewMovieAsync(movie);
+            await _service.AddNewMovieAsync(book);
             return RedirectToAction(nameof(Index));
         }
 
 
-        //GET: Movies/Edit/1
+        //GET: Books/Edit/1
         public async Task<IActionResult> Edit(int id)
         {
             var movieDetails = await _service.GetMovieByIdAsync(id);
@@ -101,7 +101,7 @@ namespace LibraryHub.Controllers
                 StartDate = movieDetails.StartDate,
                 EndDate = movieDetails.EndDate,
                 ImageURL = movieDetails.ImageURL,
-                MovieCategory = movieDetails.MovieCategory,
+                BookCategory = movieDetails.BookCategory,
                 EditionId = movieDetails.EditionId,
                 PublisherId = movieDetails.PublisherId,
                 AuthorIds = movieDetails.Authors_Books.Select(n => n.AuthorId).ToList(),
@@ -110,15 +110,15 @@ namespace LibraryHub.Controllers
             var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
             ViewBag.Edition = new SelectList(movieDropdownsData.Edition, "Id", "Name");
             ViewBag.Publishers = new SelectList(movieDropdownsData.Publishers, "Id", "FullName");
-            ViewBag.Actors = new SelectList(movieDropdownsData.Author, "Id", "FullName");
+            ViewBag.Authors = new SelectList(movieDropdownsData.Author, "Id", "FullName");
 
             return View(response);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, NewBookVM movie)
+        public async Task<IActionResult> Edit(int id, NewBookVM book)
         {
-            if (id != movie.Id) return View("NotFound");
+            if (id != book.Id) return View("NotFound");
 
             if (!ModelState.IsValid)
             {
@@ -126,12 +126,12 @@ namespace LibraryHub.Controllers
 
                 ViewBag.Edition = new SelectList(movieDropdownsData.Edition, "Id", "Name");
                 ViewBag.Publishers = new SelectList(movieDropdownsData.Publishers, "Id", "FullName");
-                ViewBag.Actors = new SelectList(movieDropdownsData.Author, "Id", "FullName");
+                ViewBag.Authors = new SelectList(movieDropdownsData.Author, "Id", "FullName");
 
-                return View(movie);
+                return View(book);
             }
 
-            await _service.UpdateMovieAsync(movie);
+            await _service.UpdateMovieAsync(book);
             return RedirectToAction(nameof(Index));
         }
     }

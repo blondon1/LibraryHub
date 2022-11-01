@@ -25,6 +25,6 @@ namespace LibraryHub.Models
         public string Description { get; set; }
 
         //Relationships
-        public List<Book> Movies { get; set; }
+        public List<Book> Books { get; set; }
     }
 }

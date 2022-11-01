@@ -35,7 +35,7 @@
                                 @Model.Publisher.FullName
                             </a>
                         </p>
-                        <p class="card-text"><b>Category: </b>@Model.MovieCategory</p>
+                        <p class="card-text"><b>Category: </b>@Model.BookCategory</p>
                         <p class="card-text"><b>Start Date: </b>@Model.StartDate.ToString("dd MMM yy")</p>
                         <p class="card-text"><b>End Date: </b>@Model.EndDate.ToString("dd MMM yy")</p>
                         <p class="card-text ">
@@ -54,15 +54,15 @@
                             }
                         </p>
                         <p class="card-text">
-                            <b>Actors: </b>
+                            <b>Authors: </b>
                             <hr />
                             <div class="row">
-                                @foreach (var actor in Model.Authors_Books)
+                                @foreach (var author in Model.Authors_Books)
                                 {
                                     <div class="column text-center">
-                                        <img class="border-info rounded-circle" src="@actor.Author.ProfilePictureURL" style="max-width: 150px" />
+                                        <img class="border-info rounded-circle" src="@author.Author.ProfilePictureURL" style="max-width: 150px" />
                                         <br />
-                                        <a asp-controller="Actors" asp-action="Details" asp-route-id="@actor.AuthorId">@actor.Author.FullName</a>
+                                        <a asp-controller="Authors" asp-action="Details" asp-route-id="@author.AuthorId">@author.Author.FullName</a>
                                     </div>
                                 }
                             </div>

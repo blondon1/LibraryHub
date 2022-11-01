@@ -28,13 +28,13 @@ namespace LibraryHub.Data.Services
                 EditionId = data.EditionId,
                 StartDate = data.StartDate,
                 EndDate = data.EndDate,
-                MovieCategory = data.MovieCategory,
+                BookCategory = data.BookCategory,
                 PublisherId = data.PublisherId
             };
             await _context.Books.AddAsync(newMovie);
             await _context.SaveChangesAsync();
 
-            //Add Book Actors
+            //Add Book Authors
             foreach (var actorId in data.AuthorIds)
             {
                 var newActorMovie = new Author_Book()
@@ -83,17 +83,17 @@ namespace LibraryHub.Data.Services
                 dbMovie.EditionId = data.EditionId;
                 dbMovie.StartDate = data.StartDate;
                 dbMovie.EndDate = data.EndDate;
-                dbMovie.MovieCategory = data.MovieCategory;
+                dbMovie.BookCategory = data.BookCategory;
                 dbMovie.PublisherId = data.PublisherId;
                 await _context.SaveChangesAsync();
             }
 
-            //Remove existing actors
+            //Remove existing Authors
             var existingActorsDb = _context.Authors_Books.Where(n => n.BookId == data.Id).ToList();
             _context.Authors_Books.RemoveRange(existingActorsDb);
             await _context.SaveChangesAsync();
 
-            //Add Book Actors
+            //Add Book Authors
             foreach (var actorId in data.AuthorIds)
             {
                 var newActorMovie = new Author_Book()
