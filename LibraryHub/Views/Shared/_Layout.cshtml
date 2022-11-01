@@ -20,8 +20,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
 
         <div class="container-fluid">
-            <a class="navbar-brand" asp-controller="Home" asp-action="Index">LibraryHub</a>
-            <a class="navbar-brand" asp-controller="Main" asp-action="Index">Main</a>
+            <a class="navbar-brand" asp-controller="Main" asp-action="Index"><i class="bi bi-book-fill"></i>LibraryHub</a>
+ 
 
             <ul class="navbar-nav flex-grow-1">
 
@@ -50,7 +50,7 @@
                 <input name="searchString" type="text" class="form-control" placeholder="Search for a book..." aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button class=" btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
             </form>
-            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Books</a>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index"><i class="bi bi-book-half"></i>Books</a>
             <ul class="navbar-nav">
                 @await Component.InvokeAsync("ShoppingCartSummary")
             </ul>
@@ -72,7 +72,7 @@
             padding-left: 0px !important;
             padding-right: 0px !important;
             /*increase width as per your need*/
-            max-width: 100%;
+            
         }
 
         .body-container2 {
@@ -97,7 +97,7 @@
 
 
 
-    <div class="container-fluid body-container backg1 backg2 backg3">
+    <div class=" body-container backg1 backg2 backg3">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
