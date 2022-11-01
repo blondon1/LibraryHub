@@ -15,7 +15,7 @@
     
     
 </head>
-<body id="page-top">
+<body id="page-top" class="area">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
 
@@ -50,7 +50,7 @@
                 <input name="searchString" type="text" class="form-control" placeholder="Search for a book..." aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button class=" btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
             </form>
-
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Books</a>
             <ul class="navbar-nav">
                 @await Component.InvokeAsync("ShoppingCartSummary")
             </ul>
