@@ -4,7 +4,7 @@
 
 ### Added or Changed
 Features and Sub-features
-•	In the books view (MVC term for page) you can see all the registered books listed.
+•	In the books view (MVC term for page) you can see all the registered books listed.\n
 o	Each book has an Edition, Category, Description, Date of availability and Status.
 •	Each book has a details button that you can click on to show more info about the book like the author (full name).
 o	Author has a profile picture.
