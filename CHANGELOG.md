@@ -12,7 +12,7 @@ o	Each book has an Edition, Category, Description, Date of availability and Stat
 o	Author has a profile picture.  
 o	Click on the author and you will see the biography.  
 o	Click on Edition and you will see the Edition details.  
-o	Click on Publisher and you will see the Publisher details.  
+o	Click on Publisher and you will see the Publisher details.    
 ##•	Navigation Bar.  
 o	Click on LibraryHub or Books and you will be redirected to the books view.  
 o	Click on Main and you will be redirected to the main view.  
