@@ -40,4 +40,4 @@ o	You can now check out with your PayPal account after adding your items to the 
 
 ### Removed
 
-- Some packages/libraries from acknowledgements I no longer use
+
