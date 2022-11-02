@@ -96,7 +96,7 @@ Use the `LibraryHub.sln` to get started.
 
 ### Built With
 
-This section lists any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. 
+This section lists any major frameworks/libraries used to bootstrap my project. 
 
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
