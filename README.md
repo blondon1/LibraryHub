@@ -31,10 +31,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">LibraryHub</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Enterprise-level E-commerce Web Application where you can buy books in this case 
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
@@ -106,7 +106,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * [![Vue][Vue.js]][Vue-url]
 * [![Angular][Angular.io]][Angular-url]
 * [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
+
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
 
@@ -264,9 +264,7 @@ Use this space to list resources you find helpful and would like to give credit 
 <!-- MVC -->
 [Svelte.dev]: https://miro.medium.com/max/375/1*GQ3Y3hoBqEylWpW4ZX9lHw.png
 [Svelte-url]: https://www.google.com/
-<!-- SCSS -->
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://www.google.com/
+
 <!-- entity -->
 [Bootstrap.com]: https://5.imimg.com/data5/MT/WF/GLADMIN-19217484/entity-framework-development-500x500.jpg
 [Bootstrap-url]: https://getbootstrap.com
