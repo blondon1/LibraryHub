@@ -36,7 +36,7 @@
   <p align="center">
     Enterprise-level E-commerce Web Application where you can buy books in this case 
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/blondon1/LibraryHub/edit/master"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
