@@ -15,6 +15,7 @@ namespace LibraryHub.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
 
