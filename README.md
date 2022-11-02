@@ -118,9 +118,9 @@ Isntall Visual Studio with the Workflows that support Wep develoment
 
 ### Prerequisites
 
-Visual Studio [https://visualstudio.microsoft.com/]
-.Net 6
-Microsoft SQL Server Management Studio
+Visual Studio [https://visualstudio.microsoft.com/]  
+.Net 6  
+Microsoft SQL Server Management Studio  
 
 ### Installation
 
@@ -173,7 +173,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Marlon Bryan Londres - [@your_twitter](https://twitter.com/your_username) - bryanlondres5@gmail.com
+Marlon Bryan Londres - [LinkedIn](https://www.linkedin.com/in/marlon-londres-722124234/) - bryanlondres5@gmail.com
 
 Project Link: [https://github.com/your_username/repo_name](https://github.com/blondon1/LibraryHub/)
 
