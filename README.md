@@ -78,9 +78,11 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project (My Medium article: https://medium.com/@bryanlondres5/deploying-an-asp-net-project-on-azure-6a8e8f67b844)
+## About The Project 
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
+
+(My Medium article: https://medium.com/@bryanlondres5/deploying-an-asp-net-project-on-azure-6a8e8f67b844)
 
 My project was originally built on Asp.net core 3.0 but I migrated all of it to Asp.net 6, and Bootstrap 4.1 to 5.1. I configured the dBcontext.cs file to communicate with the on-premise SQL server/database and create/update the database tables using the models and the relationships between them. I also seeded the database with test data to make sure everything was working properly. I worked with CRUD data principles using EntityFrameworkCore, deployed generic services and ViewComponents for real time updates. I added services to ensure that I was implementing good practices, the interfaces get data from the database by injecting them in the right controllers.
 
