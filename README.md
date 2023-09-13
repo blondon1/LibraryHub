@@ -54,7 +54,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project(Medium article: https://medium.com/@bryanlondres5/deploying-an-asp-net-project-on-azure-6a8e8f67b844)</a>
+      <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -78,7 +78,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## About The Project (My Medium article: https://medium.com/@bryanlondres5/deploying-an-asp-net-project-on-azure-6a8e8f67b844)
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
