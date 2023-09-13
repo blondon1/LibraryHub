@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LibraryHub</title>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <link rel="stylesheet" href="~/css/lib/scss/custom.scss" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    
+    
+</head>
+<body id="page-top" class="area">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-controller="Main" asp-action="Index"><i class="bi bi-book-fill"></i>LibraryHub</a>
+ 
+
+            <ul class="navbar-nav flex-grow-1">
+
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bi bi-gear"></i> Management
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" asp-controller="Editions" asp-action="Index"><i class="bi bi-camera-reels"></i> Edition</a>
+                            <a class="dropdown-item" asp-controller="Publishers" asp-action="Index"><i class="bi bi-headset"></i> Publishers</a>
+                            <a class="dropdown-item" asp-controller="Authors" asp-action="Index"><i class="bi bi-person-square"></i> Authors</a>
+                        </div>
+                    </li>
+                }
+
+
+
+            </ul>
+
+
+
+            <form class="navbar-nav ms-auto form-inline my-2 my-lg-0" id="navbarResponsive" asp-controller="Home" asp-action="Filter" style="padding-right: 25px;">
+                <input name="searchString" type="text" class="form-control" placeholder="Search for a book..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class=" btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index"><i class="bi bi-book-half"></i>Books</a>
+            <ul class="navbar-nav">
+                @await Component.InvokeAsync("ShoppingCartSummary")
+            </ul>
+
+            <partial name="_Identity.cshtml" />
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#!"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!"></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <style>
+        .body-container {
+            /*remove the container default padding attribute*/
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+            /*increase width as per your need*/
+            
+        }
+
+        .body-container2 {
+            /*remove the container default padding attribute*/
+            padding-top: 200px !important;
+            padding-left: 50px !important;
+            padding-right: 50px !important;
+            /*increase width as per your need*/
+            /*max-width: 100%;*/
+        }
+
+        .footer {
+            padding-top: 100% !important;
+            padding-left: 0% !important;
+            padding-right: 0% !important;
+        }
+        .featureImgsize {
+            width: 100%
+        }
+    </style>
+
+
+
+
+    <div class=" body-container backg1 backg2 backg3">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer-->
+    <footer class="footer">
+        <div class="container px-5"><p class="bg-black m-0 text-center text-white small">Copyright &copy; Marlon Bryan Londres 2022</p></div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+backg1 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+backg2 {
+    height: 2000px;
+    background-color: red;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/64/Creaci%C3%B3n_de_Ad%C3%A1n_%28Miguel_%C3%81ngel%29.jpg);
+    background-size: 100% auto;
+    background-position: top center;
+    background-attachment: fixed;
+}
+
+backg3 {
+    height: 100%;
+    background-image: linear-gradient(hsl(10,90,66), transparent 70%);
+    background-size: 100% 100%;
+    mix-blend-mode: difference;
+}
