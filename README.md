@@ -78,8 +78,8 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project 
-## (Note: the rep is missing commits because I imported the project from my private rep for security reasons, my global commit history has the LibraryHubProd details)
+## About The Project (Note: the rep is missing commits because I imported the project from my private rep for security reasons, my global commit history has the LibraryHubProd details)
+ 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 (My Medium article: https://medium.com/@bryanlondres5/deploying-an-asp-net-project-on-azure-6a8e8f67b844)
