@@ -127,11 +127,20 @@ Microsoft SQL Server Management Studio
 ### Installation
 
 
-1. Install VS
+1. Install VS(include Asp.net support)
 
 2. Open with VS
 
+3. Install Nuget packages
 
+4. add SQL connection string on appsettings.json or add azure app credentials for cloud deployment
+
+5. On package manager(VS) and add database migration with:
+```
+Add-migration Initial
+Update-database
+```
+6. Run app
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
