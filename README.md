@@ -78,7 +78,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project (Note: the rep is missing commits because I imported the project from my private rep for security reasons, my global commit history has the LibraryHubProd\LibraryHubArtifacts commits details)
+## About The Project 
  
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
